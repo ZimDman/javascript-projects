@@ -1,4 +1,13 @@
 //Create an anonymous function and set it equal to a variable.
+let data = function(whatsThis){
+    if (typeof whatsThis === 'number'){
+        return whatsThis * 3;
+    } else if(typeof whatsThis === 'string'){
+        return whatsThis = "ARR!"
+    }
+}
+console.log(data('hello'));
+console.log(data(3));
 
 /* Your function should:
 a) If passed a number, return the tripled value.
@@ -13,3 +22,9 @@ c) Print the new array to confirm your work.
 */
 
 let arr = ['Elocution', 21, 'Clean teeth', 100];
+
+let mappedArray = arr.map(data);
+
+console.log(mappedArray);
+
+

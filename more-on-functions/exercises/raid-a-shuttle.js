@@ -1,3 +1,5 @@
+let fuelLevel = 200000;
+
 function checkFuel(level) {
   if (level > 100000){
     return 'green';
@@ -6,6 +8,32 @@ function checkFuel(level) {
   } else {
     return 'red';
   }
+}
+let allsGood = function(a){
+  if ( checkFuel(a) === "green"){
+      return a - 100001;  
+  } else if (checkFuel(a) === "red"){
+      return a - 50001;
+  } else {
+    return a; 
+  }
+};
+
+let cargoHold = ['meal kits', 'space suits', 'first-aid kit', 'satellite', 'gold', 'water', 'AE-35 unit'];
+
+function irs(fuelLevel,cargoHold){
+  heldItems = cargoHeld(cargoHold);
+  
+  return `Raided ${allsGood(fuelLevel)} kg of fuel from the tanks, and stole ${heldItems[0]} and ${heldItems[1]} from the cargo hold.`
+}
+
+let cargoHeld = function(array){
+  let heldItems = []
+  heldItems = cargoHold.splice(3,2,)
+  cargoHold.splice(3,0,"sattelite","goId");
+
+ return heldItems;
+   
 }
 
 function holdStatus(arr){
@@ -18,15 +46,19 @@ function holdStatus(arr){
   }
 }
 
-let fuelLevel = 200000;
-let cargoHold = ['meal kits', 'space suits', 'first-aid kit', 'satellite', 'gold', 'water', 'AE-35 unit'];
 
+
+
+console.log(irs(fuelLevel,cargoHold));
 console.log("Fuel level: " + checkFuel(fuelLevel));
 console.log("Hold status: " + holdStatus(cargoHold));
+console.log(cargoHold);
+
+
 
 /* Steal some fuel from the shuttle:
  * /
- 
+
 //a). Define an anonymous function and set it equal to a variable with a normal, non-suspicious name. The function takes one parameter. This will be the fuel level on the shuttle.
 
 //b). You must siphon off fuel without alerting the TAs. Inside your function, you want to reduce the fuel level as much as possible WITHOUT changing the color returned by the checkFuel function.
@@ -34,6 +66,7 @@ console.log("Hold status: " + holdStatus(cargoHold));
 //c). Once you figure out how much fuel to pump out, return that value.
 
 //d). Decide where to best place your function call to gather our new fuel.
+
 
 /* Next, liberate some of that glorious cargo.
  * /
@@ -54,4 +87,4 @@ console.log("Hold status: " + holdStatus(cargoHold));
 //b). Call your anonymous fuel and cargo functions from within irs.
 
 //c). Use a template literal to return, "Raided _____ kg of fuel from the tanks, and stole ____ and ____ from the cargo hold."
-
+*/
